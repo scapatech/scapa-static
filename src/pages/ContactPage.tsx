@@ -44,10 +44,11 @@ export default function ContactPage() {
           message: '',
         });
       } else {
-        alert('There was an error submitting your form. Please try again.');
+        alert('There was an error submitting your form. Please email us at info@scapatech.com or call (+44) 141 319 5161.');
       }
     } catch (error) {
-      alert('There was an error submitting your form. Please try again.');
+      console.error('Form submission error:', error);
+      alert('There was an error submitting your form. Please email us at info@scapatech.com or call (+44) 141 319 5161.');
     }
   };
 
