@@ -18,8 +18,8 @@ export default function SuccessPage({ onPageChange }: SuccessPageProps) {
     remedy: [
       { name: 'IT Consultancy Testing Remedy Mid-Tier', link: '/documents/case-studies/it-consultancy-testing-remedy-mid-tier.pdf' },
       { name: 'SAAS Performance – IT Solutions Provider', link: '/documents/case-studies/saas-performance-it-solutions.pdf' },
-      { name: 'CSCA GW Case Study', link: '/documents/case-studies/CSCAGWCaseStudy_1013-2.pdf' },
-      { name: 'RapTek Case Study', link: '/documents/case-studies/RapTekCaseStudy_1013-2.pdf' },
+      { name: 'RapTek Case Study (Rapid Technologies)', link: '/documents/case-studies/RapTekCaseStudy_1013-2.pdf' },
+      { name: 'Anglia Water', link: '/documents/case-studies/CSCAGWCaseStudy_1013-2.pdf' },
     ],
     vdi: [
       { name: 'Cisco Systems Inc. (VDI Deployment)', link: '/documents/case-studies/cisco-systems-vdi-1.pdf' },
@@ -28,10 +28,10 @@ export default function SuccessPage({ onPageChange }: SuccessPageProps) {
     ],
     thinClient: [
       { name: 'Cerner Corporation (Thin Client - coming soon)', link: '#' },
-      { name: 'Anglia Water (Thin Client - coming soon)', link: '#' },
+      { name: 'Anglia Water (Thin Client - see Remedy section above)', link: '#' },
     ],
     peopleSoft: [
-      { name: 'Cerner Corporation (PeopleSoft - coming soon)', link: '#' },
+      { name: 'Cerner Corporation', link: '/documents/case-studies/cerner-peoplesoft.pdf' },
     ],
     other: [
       { name: 'ManSystems B.V.', link: '/documents/case-studies/mansystems.pdf' },
