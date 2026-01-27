@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+    --primary: 199 100% 35%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 20%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 354 83% 49%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 87%;
+    --input: 0 0% 87%;
+    --ring: 199 100% 35%;
+    --radius: 0.25rem;
+    
+    /* Scapa Brand Colors */
+    --scapa-blue: #0077b3;
+    --scapa-red: #e31837;
+    --scapa-dark-blue: #005a8a;
+    --scapa-light-blue: #e6f2f8;
+    --scapa-white: #ffffff;
+    --scapa-black: #000000;
+    --scapa-dark-gray: #333333;
+    --scapa-medium-gray: #666666;
+    --scapa-light-gray: #f5f5f5;
+    --scapa-border-gray: #dddddd;
+    
+    /* Animation Easings */
+    --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-expo-in: cubic-bezier(0.7, 0, 0.84, 0);
+    --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-dramatic: cubic-bezier(0.87, 0, 0.13, 1);
+    --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    overflow-x: hidden;
+  }
+  
+  h1 {
+    font-size: 36px;
+    line-height: 42px;
+    font-weight: 300;
+  }
+  
+  h2 {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 300;
+  }
+  
+  h3 {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 400;
+  }
+  
+  h4 {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white transition-all duration-300;
+    background-color: var(--scapa-red);
+    border-radius: 2px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #c4152f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(227, 24, 55, 0.3);
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-semibold transition-all duration-300;
+    background-color: var(--scapa-light-blue);
+    color: var(--scapa-blue);
+    border-radius: 2px;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #d4e8f2;
+    transform: translateY(-2px);
+  }
+  
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-12;
+  }
+  
+  .container-scapa {
+    @apply mx-auto max-w-7xl;
+  }
+}
+
+@layer utilities {
+  .text-scapa-blue {
+    color: var(--scapa-blue);
+  }
+  
+  .text-scapa-red {
+    color: var(--scapa-red);
+  }
+  
+  .bg-scapa-blue {
+    background-color: var(--scapa-blue);
+  }
+  
+  .bg-scapa-red {
+    background-color: var(--scapa-red);
+  }
+  
+  .bg-scapa-light-blue {
+    background-color: var(--scapa-light-blue);
+  }
+  
+  .bg-scapa-dark-blue {
+    background-color: var(--scapa-dark-blue);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.6s var(--ease-expo-out) forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s var(--ease-expo-out) forwards;
+  }
+  
+  .animate-slide-down {
+    animation: slideDown 0.6s var(--ease-expo-out) forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s var(--ease-spring) forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(227, 24, 55, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px rgba(227, 24, 55, 0.2);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,249 @@
+import { useState, useEffect, useRef } from 'react';
+import { Facebook, Twitter, Linkedin, Youtube, Search } from 'lucide-react';
+
+export default function ContactPage() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [formData, setFormData] = useState({
+    companyName: '',
+    contactName: '',
+    email: '',
+    phone: '',
+    platform: '',
+    hearAbout: '',
+    message: '',
+  });
+
+  useEffect(() => {
+    setIsVisible(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert('Thank you for your enquiry. We will get back to you soon.');
+    setFormData({
+      companyName: '',
+      contactName: '',
+      email: '',
+      phone: '',
+      platform: '',
+      hearAbout: '',
+      message: '',
+    });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  return (
+    <section ref={sectionRef} className="min-h-screen bg-white">
+      {/* Header Banner */}
+      <div className="py-12 md:py-16" style={{ backgroundColor: 'var(--scapa-blue)' }}>
+        <div className="container-scapa section-padding">
+          <h1 
+            className={`text-white text-3xl md:text-4xl font-light transition-all duration-700 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+            style={{ transitionTimingFunction: 'var(--ease-expo-out)' }}
+          >
+            Contact Us
+          </h1>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="container-scapa section-padding py-12 md:py-16">
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Left Column */}
+          <div 
+            className={`space-y-8 transition-all duration-700 delay-100 ${
+              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
+            }`}
+            style={{ transitionTimingFunction: 'var(--ease-expo-out)' }}
+          >
+            {/* Search */}
+            <div>
+              <h3 className="text-scapa-blue mb-4 flex items-center gap-2">
+                Search <Search size={18} />
+              </h3>
+              <input
+                type="text"
+                placeholder="TYPE AND HIT ENTER..."
+                className="w-full px-4 py-2 text-sm border border-gray-300 rounded-sm focus:outline-none focus:border-scapa-blue transition-colors"
+              />
+            </div>
+
+            {/* Contact Information */}
+            <div>
+              <h3 className="text-scapa-blue mb-4">Contact Information</h3>
+              <div className="text-sm text-gray-600 space-y-1">
+                <p>2/3 48 West George St.</p>
+                <p>Glasgow, G2 1BP,</p>
+                <p>Scotland</p>
+                <p className="pt-2">Telephone: (+44)1413195161</p>
+                <p>Email: info@scapatech.com</p>
+              </div>
+            </div>
+
+            {/* About Us Links */}
+            <div>
+              <h3 className="text-scapa-blue mb-4">About Us</h3>
+              <ul className="space-y-2">
+                <li>
+                  <button className="text-scapa-red text-sm hover:underline transition-all">
+                    Scapa
+                  </button>
+                </li>
+                <li>
+                  <button className="text-scapa-red text-sm hover:underline transition-all">
+                    Our History
+                  </button>
+                </li>
+                <li>
+                  <button className="text-scapa-red text-sm hover:underline transition-all">
+                    EMS
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            {/* Social Icons */}
+            <div>
+              <h3 className="text-scapa-blue mb-4">Follow Us</h3>
+              <div className="flex items-center gap-3">
+                <a 
+                  href="#" 
+                  className="w-10 h-10 flex items-center justify-center bg-[#3b5998] text-white rounded-sm hover:opacity-80 transition-opacity"
+                  aria-label="Facebook"
+                >
+                  <Facebook size={20} />
+                </a>
+                <a 
+                  href="#" 
+                  className="w-10 h-10 flex items-center justify-center bg-[#1da1f2] text-white rounded-sm hover:opacity-80 transition-opacity"
+                  aria-label="Twitter"
+                >
+                  <Twitter size={20} />
+                </a>
+                <a 
+                  href="#" 
+                  className="w-10 h-10 flex items-center justify-center bg-[#0077b5] text-white rounded-sm hover:opacity-80 transition-opacity"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={20} />
+                </a>
+                <a 
+                  href="#" 
+                  className="w-10 h-10 flex items-center justify-center bg-[#ff0000] text-white rounded-sm hover:opacity-80 transition-opacity"
+                  aria-label="YouTube"
+                >
+                  <Youtube size={20} />
+                </a>
+              </div>
+            </div>
+
+            {/* Partner Logos */}
+            <div>
+              <h3 className="text-scapa-blue mb-4">Our Partners</h3>
+              <div className="flex flex-wrap items-center gap-4">
+                <span className="text-sm font-semibold text-gray-500">VMware</span>
+                <span className="text-sm font-semibold text-gray-500">BMC</span>
+                <span className="text-sm font-semibold text-gray-500">Citrix</span>
+                <span className="text-sm font-semibold text-gray-500">Microsoft</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Contact Form */}
+          <div 
+            className={`transition-all duration-700 delay-200 ${
+              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
+            }`}
+            style={{ transitionTimingFunction: 'var(--ease-expo-out)' }}
+          >
+            <h3 className="text-scapa-blue mb-6">Get In Touch</h3>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid sm:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  name="companyName"
+                  placeholder="Company Name *"
+                  value={formData.companyName}
+                  onChange={handleChange}
+                  required
+                  className="px-4 py-3 text-sm border border-gray-300 rounded-sm focus:outline-none focus:border-scapa-blue transition-colors"
+                />
+                <input
+                  type="text"
+                  name="contactName"
+                  placeholder="Contact Name *"
+                  value={formData.contactName}
+                  onChange={handleChange}
+                  required
+                  className="px-4 py-3 text-sm border border-gray-300 rounded-sm focus:outline-none focus:border-scapa-blue transition-colors"
+                />
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Contact Email Address *"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="px-4 py-3 text-sm border border-gray-300 rounded-sm focus:outline-none focus:border-scapa-blue transition-colors"
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Contact Phone Number *"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="px-4 py-3 text-sm border border-gray-300 rounded-sm focus:outline-none focus:border-scapa-blue transition-colors"
+                />
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  name="platform"
+                  placeholder="What platform are you looking to test? *"
+                  value={formData.platform}
+                  onChange={handleChange}
+                  required
+                  className="px-4 py-3 text-sm border border-gray-300 rounded-sm focus:outline-none focus:border-scapa-blue transition-colors"
+                />
+                <input
+                  type="text"
+                  name="hearAbout"
+                  placeholder="How did you hear about Scapa? *"
+                  value={formData.hearAbout}
+                  onChange={handleChange}
+                  required
+                  className="px-4 py-3 text-sm border border-gray-300 rounded-sm focus:outline-none focus:border-scapa-blue transition-colors"
+                />
+              </div>
+              <textarea
+                name="message"
+                placeholder="Message *"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows={5}
+                className="w-full px-4 py-3 text-sm border border-gray-300 rounded-sm focus:outline-none focus:border-scapa-blue transition-colors resize-none"
+              />
+              <button
+                type="submit"
+                className="w-full btn-primary py-4"
+              >
+                SUBMIT
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
