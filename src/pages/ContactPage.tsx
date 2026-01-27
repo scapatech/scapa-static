@@ -19,18 +19,37 @@ export default function ContactPage() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Thank you for your enquiry. We will get back to you soon.');
-    setFormData({
-      companyName: '',
-      contactName: '',
-      email: '',
-      phone: '',
-      platform: '',
-      hearAbout: '',
-      message: '',
-    });
+    try {
+      const response = await fetch('https://automate.billgleeson.com/webhook/321f09d3-bac2-4ee7-8179-2a916a0a6ee8', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formType: 'contact-page',
+          ...formData,
+          submittedAt: new Date().toISOString(),
+          userAgent: navigator.userAgent,
+        }),
+      });
+
+      if (response.ok) {
+        alert('Thank you for your enquiry. We will get back to you soon.');
+        setFormData({
+          companyName: '',
+          contactName: '',
+          email: '',
+          phone: '',
+          platform: '',
+          hearAbout: '',
+          message: '',
+        });
+      } else {
+        alert('There was an error submitting your form. Please try again.');
+      }
+    } catch (error) {
+      alert('There was an error submitting your form. Please try again.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

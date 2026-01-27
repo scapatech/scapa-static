@@ -16,27 +16,27 @@ export default function SuccessPage({ onPageChange }: SuccessPageProps) {
 
   const caseStudies = {
     remedy: [
-      { name: 'CDW and Column Technologies', link: '#' },
-      { name: 'US Healthcare Organization and Rapid Technologies', link: '#' },
-      { name: 'British Telecom (BT)', link: '#' },
-      { name: 'IT Consultancy Testing Remedy Mid-Tier', link: '#' },
-      { name: 'SAAS Performance – IT Solutions Provider', link: '#' },
+      { name: 'CDW and Column Technologies', link: '/case-studies/cdw-column-technologies.md' },
+      { name: 'US Healthcare Organization and Rapid Technologies', link: '/case-studies/us-healthcare-rapid-technologies.md' },
+      { name: 'British Telecom (BT)', link: '/case-studies/british-telecom.md' },
+      { name: 'IT Consultancy Testing Remedy Mid-Tier', link: '/case-studies/it-consultancy-remedy.md' },
+      { name: 'SAAS Performance – IT Solutions Provider', link: '/case-studies/saas-performance-it-solutions.md' },
     ],
     vdi: [
-      { name: 'Cisco Systems Inc. (1)', link: '#' },
-      { name: 'SwissRe', link: '#' },
-      { name: 'Cisco Systems Inc. (2) – validated design guide to deploying an end-to-end Virtual eXperience Infrastructure on VMware View', link: '#' },
+      { name: 'Cisco Systems Inc. (1)', link: '/case-studies/cisco-systems-1.md' },
+      { name: 'SwissRe', link: '/case-studies/swissre.md' },
+      { name: 'Cisco Systems Inc. (2) – validated design guide to deploying an end-to-end Virtual eXperience Infrastructure on VMware View', link: '/case-studies/cisco-systems-2.md' },
     ],
     thinClient: [
-      { name: 'Cerner Corporation', link: '#' },
-      { name: 'Anglia Water', link: '#' },
+      { name: 'Cerner Corporation', link: '/case-studies/cerner-corporation-thin-client.md' },
+      { name: 'Anglia Water', link: '/case-studies/anglia-water.md' },
     ],
     peopleSoft: [
-      { name: 'Cerner Corporation', link: '#' },
+      { name: 'Cerner Corporation', link: '/case-studies/cerner-corporation-peoplesoft.md' },
     ],
     other: [
-      { name: 'ManSystems B.V.', link: '#' },
-      { name: 'ECABO', link: '#' },
+      { name: 'ManSystems B.V.', link: '/case-studies/mansystems.md' },
+      { name: 'ECABO', link: '/case-studies/ecabo.md' },
     ],
   };
 
@@ -95,13 +95,15 @@ export default function SuccessPage({ onPageChange }: SuccessPageProps) {
               <ul className="space-y-2">
                 {caseStudies.remedy.map((study, index) => (
                   <li key={index}>
-                    <button 
-                      onClick={() => alert('Case study details coming soon!')}
+                    <a
+                      href={study.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-scapa-blue text-sm hover:underline flex items-center gap-2 group"
                     >
                       <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                       {study.name}
-                    </button>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -113,13 +115,15 @@ export default function SuccessPage({ onPageChange }: SuccessPageProps) {
               <ul className="space-y-2">
                 {caseStudies.vdi.map((study, index) => (
                   <li key={index}>
-                    <button 
-                      onClick={() => alert('Case study details coming soon!')}
+                    <a
+                      href={study.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-scapa-blue text-sm hover:underline flex items-center gap-2 group"
                     >
                       <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                       {study.name}
-                    </button>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -131,13 +135,15 @@ export default function SuccessPage({ onPageChange }: SuccessPageProps) {
               <ul className="space-y-2">
                 {caseStudies.thinClient.map((study, index) => (
                   <li key={index}>
-                    <button 
-                      onClick={() => alert('Case study details coming soon!')}
+                    <a
+                      href={study.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-scapa-blue text-sm hover:underline flex items-center gap-2 group"
                     >
                       <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                       {study.name}
-                    </button>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -149,13 +155,15 @@ export default function SuccessPage({ onPageChange }: SuccessPageProps) {
               <ul className="space-y-2">
                 {caseStudies.peopleSoft.map((study, index) => (
                   <li key={index}>
-                    <button 
-                      onClick={() => alert('Case study details coming soon!')}
+                    <a
+                      href={study.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-scapa-blue text-sm hover:underline flex items-center gap-2 group"
                     >
                       <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                       {study.name}
-                    </button>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -167,13 +175,15 @@ export default function SuccessPage({ onPageChange }: SuccessPageProps) {
               <ul className="space-y-2">
                 {caseStudies.other.map((study, index) => (
                   <li key={index}>
-                    <button 
-                      onClick={() => alert('Case study details coming soon!')}
+                    <a
+                      href={study.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-scapa-blue text-sm hover:underline flex items-center gap-2 group"
                     >
                       <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                       {study.name}
-                    </button>
+                    </a>
                   </li>
                 ))}
               </ul>
