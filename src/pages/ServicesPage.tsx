@@ -116,19 +116,34 @@ export default function ServicesPage({ onPageChange }: ServicesPageProps) {
               <h4 className="text-scapa-blue mb-4">Find out more about our services and our unique methodology:</h4>
               <ul className="space-y-2">
                 <li>
-                  <button className="text-scapa-blue text-sm hover:underline text-left">
+                  <a
+                    href="/documents/whitepapers/scapa-professional-services-datasheet.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-scapa-blue text-sm hover:underline text-left block"
+                  >
                     Scapa Technologies Professional Services Datasheet
-                  </button>
+                  </a>
                 </li>
                 <li>
-                  <button className="text-scapa-blue text-sm hover:underline text-left">
+                  <a
+                    href="/documents/whitepapers/scapa-expedite-methodology-whitepaper.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-scapa-blue text-sm hover:underline text-left block"
+                  >
                     Scapa Expedite Methodology White Paper
-                  </button>
+                  </a>
                 </li>
                 <li>
-                  <button className="text-scapa-blue text-sm hover:underline text-left">
+                  <a
+                    href="/documents/whitepapers/scapa-expedite-testing-activities-whitepaper.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-scapa-blue text-sm hover:underline text-left block"
+                  >
                     Scapa Expedite Testing Activities White Paper
-                  </button>
+                  </a>
                 </li>
               </ul>
             </div>

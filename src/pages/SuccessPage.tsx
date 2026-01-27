@@ -16,27 +16,26 @@ export default function SuccessPage({ onPageChange }: SuccessPageProps) {
 
   const caseStudies = {
     remedy: [
-      { name: 'CDW and Column Technologies', link: '/case-studies/cdw-column-technologies.md' },
-      { name: 'US Healthcare Organization and Rapid Technologies', link: '/case-studies/us-healthcare-rapid-technologies.md' },
-      { name: 'British Telecom (BT)', link: '/case-studies/british-telecom.md' },
-      { name: 'IT Consultancy Testing Remedy Mid-Tier', link: '/case-studies/it-consultancy-remedy.md' },
-      { name: 'SAAS Performance – IT Solutions Provider', link: '/case-studies/saas-performance-it-solutions.md' },
+      { name: 'IT Consultancy Testing Remedy Mid-Tier', link: '/documents/case-studies/it-consultancy-testing-remedy-mid-tier.pdf' },
+      { name: 'SAAS Performance – IT Solutions Provider', link: '/documents/case-studies/saas-performance-it-solutions.pdf' },
+      { name: 'CSCA GW Case Study', link: '/documents/case-studies/CSCAGWCaseStudy_1013-2.pdf' },
+      { name: 'RapTek Case Study', link: '/documents/case-studies/RapTekCaseStudy_1013-2.pdf' },
     ],
     vdi: [
-      { name: 'Cisco Systems Inc. (1)', link: '/case-studies/cisco-systems-1.md' },
-      { name: 'SwissRe', link: '/case-studies/swissre.md' },
-      { name: 'Cisco Systems Inc. (2) – validated design guide to deploying an end-to-end Virtual eXperience Infrastructure on VMware View', link: '/case-studies/cisco-systems-2.md' },
+      { name: 'Cisco Systems Inc. (VDI Deployment)', link: '/documents/case-studies/cisco-systems-vdi-1.pdf' },
+      { name: 'SwissRe', link: '/documents/case-studies/swissre-vdi.pdf' },
+      { name: 'Cisco Systems Inc. – Validated Design Guide for VMware View', link: '/documents/case-studies/cisco-vmware-validated-design-vdi.pdf' },
     ],
     thinClient: [
-      { name: 'Cerner Corporation', link: '/case-studies/cerner-corporation-thin-client.md' },
-      { name: 'Anglia Water', link: '/case-studies/anglia-water.md' },
+      { name: 'Cerner Corporation (Thin Client - coming soon)', link: '#' },
+      { name: 'Anglia Water (Thin Client - coming soon)', link: '#' },
     ],
     peopleSoft: [
-      { name: 'Cerner Corporation', link: '/case-studies/cerner-corporation-peoplesoft.md' },
+      { name: 'Cerner Corporation (PeopleSoft - coming soon)', link: '#' },
     ],
     other: [
-      { name: 'ManSystems B.V.', link: '/case-studies/mansystems.md' },
-      { name: 'ECABO', link: '/case-studies/ecabo.md' },
+      { name: 'ManSystems B.V.', link: '/documents/case-studies/mansystems.pdf' },
+      { name: 'ECABO', link: '/documents/case-studies/ecabo.pdf' },
     ],
   };
 
