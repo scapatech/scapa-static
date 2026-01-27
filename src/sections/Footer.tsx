@@ -1,10 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 
-interface FooterProps {
-  onPageChange: (page: string) => void;
-}
-
-export default function Footer({ onPageChange }: FooterProps) {
+export default function Footer() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({

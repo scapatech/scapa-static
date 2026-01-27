@@ -77,7 +77,7 @@ function App() {
         {renderPage()}
       </main>
       
-      <Footer onPageChange={handlePageChange} />
+      <Footer />
       
       {/* Scroll to Top Button */}
       <button
