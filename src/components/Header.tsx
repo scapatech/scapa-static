@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Facebook, Twitter, Linkedin, Youtube, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import scapaLogo from '/images/scapa-logo.png';
 
 interface HeaderProps {
   currentPage: string;
@@ -49,26 +50,12 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
             The end to end infrastructure and application delivery performance specialists
           </p>
           <div className="flex items-center gap-4 ml-auto">
-            <button 
+            <button
               onClick={() => handleNavClick('contact')}
               className="btn-primary text-xs py-1.5 px-4"
             >
               REQUEST A DEMO
             </button>
-            <div className="flex items-center gap-2">
-              <a href="#" className="text-white hover:text-gray-200 transition-colors">
-                <Facebook size={16} />
-              </a>
-              <a href="#" className="text-white hover:text-gray-200 transition-colors">
-                <Twitter size={16} />
-              </a>
-              <a href="#" className="text-white hover:text-gray-200 transition-colors">
-                <Linkedin size={16} />
-              </a>
-              <a href="#" className="text-white hover:text-gray-200 transition-colors">
-                <Youtube size={16} />
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -83,44 +70,15 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
       >
         <div className="container-scapa h-full flex items-center justify-between section-padding">
           {/* Logo */}
-          <button 
+          <button
             onClick={() => handleNavClick('home')}
             className="flex items-center gap-2 transition-transform duration-300 hover:scale-105"
           >
-            <svg 
-              width="50" 
-              height="50" 
-              viewBox="0 0 100 100" 
-              className={`transition-all duration-300 ${isScrolled ? 'scale-90' : 'scale-100'}`}
-            >
-              <polygon 
-                points="10,90 90,90 90,10" 
-                fill="var(--scapa-black)"
-              />
-              <polygon 
-                points="10,90 90,10 10,10" 
-                fill="var(--scapa-red)"
-              />
-              <polygon 
-                points="10,90 50,50 10,10" 
-                fill="white"
-                opacity="0.3"
-              />
-            </svg>
-            <div className="flex flex-col items-start">
-              <span 
-                className="text-2xl font-semibold tracking-tight"
-                style={{ color: 'var(--scapa-dark-gray)' }}
-              >
-                Scapa
-              </span>
-              <span 
-                className="text-xs tracking-wider -mt-1"
-                style={{ color: 'var(--scapa-medium-gray)' }}
-              >
-                Technologies
-              </span>
-            </div>
+            <img
+              src={scapaLogo}
+              alt="Scapa Technologies"
+              className={`h-12 w-auto transition-all duration-300 ${isScrolled ? 'scale-90' : 'scale-100'}`}
+            />
           </button>
 
           {/* Desktop Navigation */}

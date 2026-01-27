@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Monitor, Server, Cloud, Shield, Check } from 'lucide-react';
+import { Monitor, Server, Cloud, Check } from 'lucide-react';
 
 interface SolutionsPageProps {
   onPageChange: (page: string) => void;
@@ -20,7 +20,6 @@ export default function SolutionsPage({ onPageChange }: SolutionsPageProps) {
     { id: 'thinclient', label: 'Thin Client', icon: Monitor },
     { id: 'vdi', label: 'VDI', icon: Cloud },
     { id: 'peoplesoft', label: 'PeopleSoft', icon: Server },
-    { id: 'security', label: 'Security Scanning', icon: Shield },
   ];
 
   const tabContent: Record<string, { title: string; description: string; features: string[] }> = {
@@ -46,32 +45,22 @@ export default function SolutionsPage({ onPageChange }: SolutionsPageProps) {
     },
     vdi: {
       title: 'Scapa TPP for VDI',
-      description: 'Scapa TPP provides the best-in-class Web Application and Infrastructure vulnerability scanner. Designed and developed by experienced security professionals, it provides the capability to carry out regular scans to identify vulnerabilities which, if left unchecked, could quickly become a significant business risk.',
+      description: 'Scapa TPP is the only effective performance testing tool for Virtual Desktop Infrastructure solutions. It provides comprehensive testing capabilities from the user perspective, ensuring optimal performance and user experience for VDI deployments.',
       features: [
-        'Infrastructure vulnerability scanning',
-        'Regular automated scans',
-        'Risk assessment reports',
-        'Security professional designed',
+        'User perspective testing',
+        'VDI performance monitoring',
+        'Infrastructure optimization',
+        'End-to-end visibility',
       ],
     },
     peoplesoft: {
       title: 'Scapa TPP for PeopleSoft',
-      description: 'Scapa TPP provides the assurance that your PeopleSoft application is of the highest quality and is working at optimum performance during migration, upgrade or other system change projects. It also carries out regular scans to identify vulnerabilities which, if left unchecked, could quickly become a significant business risk.',
+      description: 'Scapa TPP provides the assurance that your PeopleSoft application is of the highest quality and is working at optimum performance during migration, upgrade or other system change projects.',
       features: [
         'Migration testing',
         'Upgrade validation',
         'Performance optimization',
         'Continuous monitoring',
-      ],
-    },
-    security: {
-      title: 'AppCheckNG Security Scanning',
-      description: 'AppCheckNG is a best-in-class Web Application and Infrastructure vulnerability scanner. Designed and developed by experienced security professionals, it provides the capability to carry out regular scans to identify vulnerabilities which, if left unchecked, could quickly become a significant business risk.',
-      features: [
-        'Web application scanning',
-        'Infrastructure scanning',
-        'Vulnerability identification',
-        'Professional security reports',
       ],
     },
   };
@@ -93,7 +82,6 @@ export default function SolutionsPage({ onPageChange }: SolutionsPageProps) {
     { title: 'Performance Testing, Analysis and Tuning', desc: 'Find out about your system and where improvements can be made' },
     { title: 'Performance and Capacity regression and upgrade testing', desc: 'Ongoing tests allow you to maintain performance through system changes' },
     { title: 'Benchmarking MS Office and custom applications', desc: 'Discover what performance levels your system can achieve' },
-    { title: 'Web Application Security', desc: 'Deploy our automated scanner to discover and remediate security holes' },
     { title: 'Trouble Shooting', desc: 'Uncover what is causing your system problem through root cause analysis' },
     { title: 'Continued Assurance SLA Monitoring', desc: 'Ensure clients can see that you are meeting agreed service levels' },
     { title: 'Validating new systems on your architecture', desc: 'Work out which software application works best for you' },
@@ -126,9 +114,9 @@ export default function SolutionsPage({ onPageChange }: SolutionsPageProps) {
             style={{ transitionTimingFunction: 'var(--ease-expo-out)' }}
           >
             <p className="text-gray-600 leading-relaxed mb-8">
-              Scapa Technologies provides best of breed testing, security and monitoring software 
-              solutions and services. These will help you quickly identify and resolve bottlenecks 
-              and other capacity, tuning, security or reliability issues in your unique system architecture.
+              Scapa Technologies provides best of breed testing and monitoring software
+              solutions and services. These will help you quickly identify and resolve bottlenecks
+              and other capacity, tuning, or reliability issues in your unique system architecture.
             </p>
             
             <h3 className="text-scapa-blue mb-4">We specialize in testing and monitoring:</h3>

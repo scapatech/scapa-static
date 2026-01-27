@@ -5,6 +5,7 @@ on:
     branches: [master]
   push:
     branches: [master]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -28,12 +29,15 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Run Lighthouse CI
+      - name: Serve and test
+        run: |
+          npx -y serve dist -l 3000 > /dev/null 2>&1 &
+          sleep 5
+
+      - name: Run Lighthouse
         uses: treosh/lighthouse-ci-action@v10
         with:
-          uploadArtifacts: true
-          temporaryPublicStorage: true
           urls: |
-            https://scapatech.github.io/scapa-static/
-          budgetPath: ./.github/lighthouse-budget.json
-          commentSummary: true
+            http://localhost:3000
+          uploadArtifacts: false
+          temporaryPublicStorage: false

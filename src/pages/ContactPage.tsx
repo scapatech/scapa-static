@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import { Facebook, Twitter, Linkedin, Youtube, Search } from 'lucide-react';
 
 export default function ContactPage() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -74,115 +73,15 @@ export default function ContactPage() {
 
       {/* Main Content */}
       <div className="container-scapa section-padding py-12 md:py-16">
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Left Column */}
-          <div 
-            className={`space-y-8 transition-all duration-700 delay-100 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
-            }`}
-            style={{ transitionTimingFunction: 'var(--ease-expo-out)' }}
-          >
-            {/* Search */}
-            <div>
-              <h3 className="text-scapa-blue mb-4 flex items-center gap-2">
-                Search <Search size={18} />
-              </h3>
-              <input
-                type="text"
-                placeholder="TYPE AND HIT ENTER..."
-                className="w-full px-4 py-2 text-sm border border-gray-300 rounded-sm focus:outline-none focus:border-scapa-blue transition-colors"
-              />
-            </div>
-
-            {/* Contact Information */}
-            <div>
-              <h3 className="text-scapa-blue mb-4">Contact Information</h3>
-              <div className="text-sm text-gray-600 space-y-1">
-                <p>2/3 48 West George St.</p>
-                <p>Glasgow, G2 1BP,</p>
-                <p>Scotland</p>
-                <p className="pt-2">Telephone: (+44)1413195161</p>
-                <p>Email: info@scapatech.com</p>
-              </div>
-            </div>
-
-            {/* About Us Links */}
-            <div>
-              <h3 className="text-scapa-blue mb-4">About Us</h3>
-              <ul className="space-y-2">
-                <li>
-                  <button className="text-scapa-red text-sm hover:underline transition-all">
-                    Scapa
-                  </button>
-                </li>
-                <li>
-                  <button className="text-scapa-red text-sm hover:underline transition-all">
-                    Our History
-                  </button>
-                </li>
-                <li>
-                  <button className="text-scapa-red text-sm hover:underline transition-all">
-                    EMS
-                  </button>
-                </li>
-              </ul>
-            </div>
-
-            {/* Social Icons */}
-            <div>
-              <h3 className="text-scapa-blue mb-4">Follow Us</h3>
-              <div className="flex items-center gap-3">
-                <a 
-                  href="#" 
-                  className="w-10 h-10 flex items-center justify-center bg-[#3b5998] text-white rounded-sm hover:opacity-80 transition-opacity"
-                  aria-label="Facebook"
-                >
-                  <Facebook size={20} />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 flex items-center justify-center bg-[#1da1f2] text-white rounded-sm hover:opacity-80 transition-opacity"
-                  aria-label="Twitter"
-                >
-                  <Twitter size={20} />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 flex items-center justify-center bg-[#0077b5] text-white rounded-sm hover:opacity-80 transition-opacity"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin size={20} />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 flex items-center justify-center bg-[#ff0000] text-white rounded-sm hover:opacity-80 transition-opacity"
-                  aria-label="YouTube"
-                >
-                  <Youtube size={20} />
-                </a>
-              </div>
-            </div>
-
-            {/* Partner Logos */}
-            <div>
-              <h3 className="text-scapa-blue mb-4">Our Partners</h3>
-              <div className="flex flex-wrap items-center gap-4">
-                <span className="text-sm font-semibold text-gray-500">VMware</span>
-                <span className="text-sm font-semibold text-gray-500">BMC</span>
-                <span className="text-sm font-semibold text-gray-500">Citrix</span>
-                <span className="text-sm font-semibold text-gray-500">Microsoft</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column - Contact Form */}
-          <div 
-            className={`transition-all duration-700 delay-200 ${
+        <div className="max-w-2xl mx-auto">
+          {/* Contact Form */}
+          <div
+            className={`transition-all duration-700 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
             }`}
             style={{ transitionTimingFunction: 'var(--ease-expo-out)' }}
           >
-            <h3 className="text-scapa-blue mb-6">Get In Touch</h3>
+            <h3 className="text-scapa-blue mb-6 text-2xl">Get In Touch</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <input

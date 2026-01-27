@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import { Facebook, Twitter, Linkedin, Youtube, Search } from 'lucide-react';
 
 interface FooterProps {
   onPageChange: (page: string) => void;
@@ -76,28 +75,9 @@ export default function Footer({ onPageChange }: FooterProps) {
   return (
     <footer ref={sectionRef} className="bg-white pt-12 pb-6">
       <div className="container-scapa section-padding">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* Search Column */}
-          <div 
-            className={`transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-            style={{ transitionTimingFunction: 'var(--ease-expo-out)' }}
-          >
-            <h4 className="text-scapa-blue mb-4 flex items-center gap-2">
-              Search <Search size={18} />
-            </h4>
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="TYPE AND HIT ENTER..."
-                className="w-full px-4 py-2 text-sm border border-gray-300 rounded-sm focus:outline-none focus:border-scapa-blue transition-colors"
-              />
-            </div>
-          </div>
-
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Contact Info Column */}
-          <div 
+          <div
             className={`transition-all duration-700 delay-100 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
@@ -113,44 +93,8 @@ export default function Footer({ onPageChange }: FooterProps) {
             </div>
           </div>
 
-          {/* About Us Column */}
-          <div 
-            className={`transition-all duration-700 delay-200 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-            style={{ transitionTimingFunction: 'var(--ease-expo-out)' }}
-          >
-            <h4 className="text-scapa-blue mb-4">About Us</h4>
-            <ul className="space-y-2">
-              <li>
-                <button 
-                  onClick={() => onPageChange('home')}
-                  className="text-scapa-red text-sm hover:underline transition-all"
-                >
-                  Scapa
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => onPageChange('home')}
-                  className="text-scapa-red text-sm hover:underline transition-all"
-                >
-                  Our History
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => onPageChange('solutions')}
-                  className="text-scapa-red text-sm hover:underline transition-all"
-                >
-                  EMS
-                </button>
-              </li>
-            </ul>
-          </div>
-
           {/* Contact Form Column */}
-          <div 
+          <div
             className={`transition-all duration-700 delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
@@ -237,54 +181,19 @@ export default function Footer({ onPageChange }: FooterProps) {
           </div>
         </div>
 
-        {/* Social & Partners */}
-        <div 
-          className={`flex flex-wrap items-center justify-between gap-6 pt-8 border-t border-gray-200 transition-all duration-700 delay-400 ${
+        {/* Partners */}
+        <div
+          className={`flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-gray-200 transition-all duration-700 delay-400 ${
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}
           style={{ transitionTimingFunction: 'var(--ease-smooth)' }}
         >
-          {/* Social Icons */}
-          <div className="flex items-center gap-3">
-            <a 
-              href="#" 
-              className="w-8 h-8 flex items-center justify-center bg-[#3b5998] text-white rounded-sm hover:opacity-80 transition-opacity"
-              aria-label="Facebook"
-            >
-              <Facebook size={18} />
-            </a>
-            <a 
-              href="#" 
-              className="w-8 h-8 flex items-center justify-center bg-[#1da1f2] text-white rounded-sm hover:opacity-80 transition-opacity"
-              aria-label="Twitter"
-            >
-              <Twitter size={18} />
-            </a>
-            <a 
-              href="#" 
-              className="w-8 h-8 flex items-center justify-center bg-[#0077b5] text-white rounded-sm hover:opacity-80 transition-opacity"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={18} />
-            </a>
-            <a 
-              href="#" 
-              className="w-8 h-8 flex items-center justify-center bg-[#ff0000] text-white rounded-sm hover:opacity-80 transition-opacity"
-              aria-label="YouTube"
-            >
-              <Youtube size={18} />
-            </a>
-          </div>
-
-          {/* Partner Logos */}
-          <div className="flex items-center gap-6">
-            <span className="text-xs text-gray-400">Partners:</span>
-            <div className="flex items-center gap-4">
-              <span className="text-sm font-semibold text-gray-500">VMware</span>
-              <span className="text-sm font-semibold text-gray-500">BMC</span>
-              <span className="text-sm font-semibold text-gray-500">Citrix</span>
-              <span className="text-sm font-semibold text-gray-500">Microsoft</span>
-            </div>
+          <span className="text-xs text-gray-400">Partners:</span>
+          <div className="flex items-center gap-4">
+            <span className="text-sm font-semibold text-gray-500">VMware</span>
+            <span className="text-sm font-semibold text-gray-500">BMC</span>
+            <span className="text-sm font-semibold text-gray-500">Citrix</span>
+            <span className="text-sm font-semibold text-gray-500">Microsoft</span>
           </div>
         </div>
 
