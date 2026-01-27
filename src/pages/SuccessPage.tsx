@@ -16,9 +16,11 @@ export default function SuccessPage({ onPageChange }: SuccessPageProps) {
 
   const caseStudies = {
     remedy: [
+      { name: 'CDW and Column Technologies', link: '/documents/case-studies/cdw-column-technologies.pdf' },
       { name: 'IT Consultancy Testing Remedy Mid-Tier', link: '/documents/case-studies/it-consultancy-testing-remedy-mid-tier.pdf' },
       { name: 'SAAS Performance – IT Solutions Provider', link: '/documents/case-studies/saas-performance-it-solutions.pdf' },
       { name: 'RapTek Case Study (Rapid Technologies)', link: '/documents/case-studies/RapTekCaseStudy_1013-2.pdf' },
+      { name: 'British Telecom (BT)', link: '/documents/case-studies/british-telecom.pdf' },
       { name: 'Anglia Water', link: '/documents/case-studies/CSCAGWCaseStudy_1013-2.pdf' },
     ],
     vdi: [
@@ -27,8 +29,7 @@ export default function SuccessPage({ onPageChange }: SuccessPageProps) {
       { name: 'Cisco Systems Inc. – Validated Design Guide for VMware View', link: '/documents/case-studies/cisco-vmware-validated-design-vdi.pdf' },
     ],
     thinClient: [
-      { name: 'Cerner Corporation (Thin Client - coming soon)', link: '#' },
-      { name: 'Anglia Water (Thin Client - see Remedy section above)', link: '#' },
+      { name: 'Cerner Corporation', link: '/documents/case-studies/cerner-thin-client.pdf' },
     ],
     peopleSoft: [
       { name: 'Cerner Corporation', link: '/documents/case-studies/cerner-peoplesoft.pdf' },
