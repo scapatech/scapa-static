@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Check, Quote } from 'lucide-react';
+import { Check, Quote, Monitor, Database, Cloud } from 'lucide-react';
 
 interface ServicesPageProps {
   onPageChange: (page: string) => void;
@@ -150,39 +150,30 @@ export default function ServicesPage({ onPageChange }: ServicesPageProps) {
           </div>
 
           {/* Right Column - Device Icons */}
-          <div 
+          <div
             className={`flex items-center justify-center transition-all duration-700 delay-200 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
             }`}
             style={{ transitionTimingFunction: 'var(--ease-expo-out)' }}
           >
-            <div className="flex items-end gap-4">
+            <div className="flex items-end gap-6">
               <div className="text-center">
-                <div className="w-24 h-20 bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center mb-2 shadow-md">
-                  <svg viewBox="0 0 100 80" className="w-16 h-12">
-                    <polygon points="10,70 90,70 90,10" fill="var(--scapa-black)" />
-                    <polygon points="10,70 90,10 10,10" fill="var(--scapa-red)" />
-                  </svg>
+                <div className="w-24 h-24 bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center mb-3 shadow-md">
+                  <Monitor size={48} className="text-scapa-blue" />
                 </div>
-                <span className="text-scapa-blue text-sm">Thin Client</span>
+                <span className="text-scapa-blue text-sm font-medium">Thin Client</span>
               </div>
               <div className="text-center">
-                <div className="w-32 h-24 bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center mb-2 shadow-md">
-                  <svg viewBox="0 0 100 80" className="w-20 h-16">
-                    <polygon points="10,70 90,70 90,10" fill="var(--scapa-black)" />
-                    <polygon points="10,70 90,10 10,10" fill="var(--scapa-red)" />
-                  </svg>
+                <div className="w-28 h-28 bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center mb-3 shadow-md">
+                  <Database size={56} className="text-scapa-blue" />
                 </div>
-                <span className="text-scapa-blue text-sm">Remedy</span>
+                <span className="text-scapa-blue text-sm font-medium">Remedy</span>
               </div>
               <div className="text-center">
-                <div className="w-24 h-20 bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center mb-2 shadow-md">
-                  <svg viewBox="0 0 100 80" className="w-16 h-12">
-                    <polygon points="10,70 90,70 90,10" fill="var(--scapa-black)" />
-                    <polygon points="10,70 90,10 10,10" fill="var(--scapa-red)" />
-                  </svg>
+                <div className="w-24 h-24 bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center mb-3 shadow-md">
+                  <Cloud size={48} className="text-scapa-blue" />
                 </div>
-                <span className="text-scapa-blue text-sm">VDI</span>
+                <span className="text-scapa-blue text-sm font-medium">VDI</span>
               </div>
             </div>
           </div>

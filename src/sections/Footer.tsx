@@ -85,8 +85,6 @@ export default function Footer() {
               <p>2/3 48 West George St.</p>
               <p>Glasgow, G2 1BP,</p>
               <p>Scotland</p>
-              <p className="pt-2">Telephone: (+44)1413195161</p>
-              <p>Email: info@scapatech.com</p>
             </div>
           </div>
 
@@ -178,31 +176,15 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Partners */}
-        <div
-          className={`flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-gray-200 transition-all duration-700 delay-400 ${
-            isVisible ? 'opacity-100' : 'opacity-0'
-          }`}
-          style={{ transitionTimingFunction: 'var(--ease-smooth)' }}
-        >
-          <span className="text-xs text-gray-400">Partners:</span>
-          <div className="flex items-center gap-4">
-            <span className="text-sm font-semibold text-gray-500">VMware</span>
-            <span className="text-sm font-semibold text-gray-500">BMC</span>
-            <span className="text-sm font-semibold text-gray-500">Citrix</span>
-            <span className="text-sm font-semibold text-gray-500">Microsoft</span>
-          </div>
-        </div>
-
-        {/* Copyright */}
+        {/* Copyright & Policies */}
         <div 
           className={`mt-8 pt-4 border-t border-gray-200 text-center text-xs text-gray-500 transition-all duration-700 delay-500 ${
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <a href="#" className="hover:text-scapa-blue transition-colors">Privacy Policy</a>
+          <a href="/privacy" className="hover:text-scapa-blue transition-colors">Privacy Policy</a>
           <span className="mx-2">|</span>
-          <a href="#" className="hover:text-scapa-blue transition-colors">Cookie Policy</a>
+          <a href="/cookies" className="hover:text-scapa-blue transition-colors">Cookie Policy</a>
           <span className="mx-2">|</span>
           <span>© 2024 – All Rights Reserved. Scapa Technologies Limited is registered in Scotland number SC187089.</span>
         </div>

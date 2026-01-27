@@ -204,23 +204,6 @@ export default function SuccessPage({ onPageChange }: SuccessPageProps) {
         </div>
       </div>
 
-      {/* Client Logos */}
-      <div className="py-12 border-t border-gray-200">
-        <div className="container-scapa section-padding">
-          <div className="flex flex-wrap items-center justify-center gap-8">
-            {['Swiss Re', 'Cisco', 'BT', 'Comcast', 'Cerner'].map((client, index) => (
-              <span 
-                key={index} 
-                className="text-gray-400 font-semibold text-lg"
-                style={{ filter: 'grayscale(100%)' }}
-              >
-                {client}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* CTA Banner */}
       <div className="py-12" style={{ backgroundColor: 'var(--scapa-blue)' }}>
         <div className="container-scapa section-padding text-center">

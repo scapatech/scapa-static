@@ -15,6 +15,8 @@ import SolutionsPage from './pages/SolutionsPage';
 import ServicesPage from './pages/ServicesPage';
 import SuccessPage from './pages/SuccessPage';
 import ContactPage from './pages/ContactPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import CookiePolicyPage from './pages/CookiePolicyPage';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -63,6 +65,10 @@ function App() {
         return <SuccessPage onPageChange={handlePageChange} />;
       case 'contact':
         return <ContactPage />;
+      case 'privacy':
+        return <PrivacyPolicyPage />;
+      case 'cookies':
+        return <CookiePolicyPage />;
       case 'home':
       default:
         return <HomePage />;
