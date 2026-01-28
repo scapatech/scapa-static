@@ -17,7 +17,7 @@ jobs:
       - name: Check site uptime
         id: uptime
         run: |
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://scapatech.github.io/scapa-static/)
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://www.scapatech.com/)
           echo "status=$STATUS" >> $GITHUB_OUTPUT
 
           if [ $STATUS -ne 200 ]; then
@@ -30,7 +30,7 @@ jobs:
       - name: Check for critical elements
         run: |
           # Check if page contains expected content
-          CONTENT=$(curl -s https://scapatech.github.io/scapa-static/)
+          CONTENT=$(curl -s https://www.scapatech.com/)
 
           if ! echo "$CONTENT" | grep -q "Scapa"; then
             echo "::error::Critical content not found on page"
@@ -48,7 +48,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: `🚨 Site Down - Uptime Check Failed`,
-              body: `The uptime check failed for https://scapatech.github.io/scapa-static/
+              body: `The uptime check failed for https://www.scapatech.com/
 
               **Time:** ${new Date().toISOString()}
               **Workflow:** ${context.workflow}
