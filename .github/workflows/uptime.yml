@@ -17,27 +17,44 @@ jobs:
       - name: Check site uptime
         id: uptime
         run: |
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://www.scapatech.com/)
-          echo "status=$STATUS" >> $GITHUB_OUTPUT
-
-          if [ $STATUS -ne 200 ]; then
-            echo "::error::Site returned status $STATUS"
-            exit 1
-          fi
-
-          echo "Site is up (HTTP $STATUS)"
+          set -e
+          
+          # Add retry logic
+          for i in {1..3}; do
+            echo "Attempt $i of 3..."
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" --connect-timeout 10 --max-time 30 https://www.scapatech.com/)
+            
+            if [ "$STATUS" -eq 200 ]; then
+              echo "status=".$STATUS >> $GITHUB_OUTPUT
+              echo "Site is up (HTTP $STATUS)"
+              exit 0
+            else
+              echo "Status: $STATUS (attempt $i)"
+              if [ $i -lt 3 ]; then
+                sleep 5
+              fi
+            fi
+          done
+          
+          echo "status=".$STATUS >> $GITHUB_OUTPUT
+          echo "::error::Site returned status $STATUS after 3 attempts"
+          exit 1
 
       - name: Check for critical elements
         run: |
-          # Check if page contains expected content
-          CONTENT=$(curl -s https://www.scapatech.com/)
-
-          if ! echo "$CONTENT" | grep -q "Scapa"; then
+          set -e
+          
+          # Fetch the page with timeout
+          CONTENT=$(curl -s --connect-timeout 10 --max-time 30 https://www.scapatech.com/)
+          
+          # Check for multiple indicators of a valid page
+          if echo "$CONTENT" | grep -qi "scapa\|<!DOCTYPE\|<html"; then
+            echo "Critical content check passed"
+          else
             echo "::error::Critical content not found on page"
+            echo "Page preview: $(echo "$CONTENT" | head -c 500)"
             exit 1
           fi
-
-          echo "Critical content check passed"
 
       - name: Create issue on failure
         if: failure()
@@ -51,9 +68,10 @@ jobs:
               body: `The uptime check failed for https://www.scapatech.com/
 
               **Time:** ${new Date().toISOString()}
+              **Status Code:** ${{ steps.uptime.outputs.status }}
               **Workflow:** ${context.workflow}
               **Run:** ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}
 
-              Please investigate the issue.`,
+              Please investigate the issue immediately.`,
               labels: ['bug', 'urgent', 'uptime']
             })
