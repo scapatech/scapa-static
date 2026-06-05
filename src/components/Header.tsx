@@ -21,9 +21,7 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
 
   const navItems = [
     { id: 'solutions', label: 'Solutions' },
-    { id: 'services', label: 'Services' },
     { id: 'success', label: 'Success' },
-    { id: 'contact', label: 'Contact Us' },
   ];
 
   const handleNavClick = (pageId: string) => {
@@ -41,22 +39,14 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
         }`}
         style={{ backgroundColor: 'var(--scapa-blue)' }}
       >
-        <div className="container-scapa h-full flex items-center justify-between section-padding">
-          <p 
-            className={`text-white text-xs transition-all duration-300 hidden sm:block ${
+        <div className="container-scapa h-full flex items-center section-padding">
+          <p
+            className={`text-white text-xs transition-all duration-300 ${
               isScrolled ? 'opacity-0' : 'opacity-100'
             }`}
           >
             The end to end infrastructure and application delivery performance specialists
           </p>
-          <div className="flex items-center gap-4 ml-auto">
-            <button
-              onClick={() => handleNavClick('contact')}
-              className="btn-primary text-xs py-1.5 px-4"
-            >
-              REQUEST A DEMO
-            </button>
-          </div>
         </div>
       </div>
 
