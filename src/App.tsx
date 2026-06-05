@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import ClosureBanner from './components/ClosureBanner';
 import Header from './components/Header';
 import HeroSection from './sections/HeroSection';
 import WelcomeSection from './sections/WelcomeSection';
@@ -77,6 +78,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white">
+      <ClosureBanner />
       <Header currentPage={currentPage} onPageChange={handlePageChange} />
       
       <main>
