@@ -11,7 +11,7 @@ export default function ClosureBanner() {
           <AlertCircle className="text-white shrink-0" size={24} />
           <div className="flex-1">
             <p className="text-white font-semibold text-sm md:text-base">
-              Scapa Technologies Limited has ceased trading and is in the process of being dissolved.
+              Scapa Technologies Limited has ceased trading and the Company has been formally dissolved.
             </p>
             <div className="flex flex-wrap items-center gap-2 mt-2">
               <span className="text-white/90 text-sm">The Scapa software is now open source and available at</span>
